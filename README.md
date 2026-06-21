@@ -1,9 +1,8 @@
 <div align="center">
 
-# 🛣️ RoadMind-X
+# RoadMind-X
 **From Detection to Prevention: A Cognitive Traffic Intelligence Platform**
 
-[![Hackathon](https://img.shields.io/badge/Flipkart_GRID_Hackathon-2025-1A6FE8?style=for-the-badge&logo=flipkart)](https://unstop.com/hackathons/flipkart-grid)
 [![Track](https://img.shields.io/badge/Track-AI/ML_for_Smart_Cities-00D68F?style=for-the-badge)](https://github.com/)
 [![Status](https://img.shields.io/badge/Status-Prototype-FF6B1A?style=for-the-badge)](https://github.com/)
 
@@ -13,7 +12,7 @@
 
 ---
 
-## 🛑 The Problem: Reactive Enforcement
+## The Problem: Reactive Enforcement
 
 Traffic management systems today are entirely **reactive**: violation → camera capture → fine generation (days later).
 - **No Pattern Recognition**: There is no long-term memory of why a road repeats the same violations daily.
@@ -23,7 +22,7 @@ Traffic management systems today are entirely **reactive**: violation → camera
 
 ---
 
-## 💡 The Solution: Cognitive Intelligence
+## The Solution: Cognitive Intelligence
 
 **RoadMind-X** transforms traditional CCTV feeds by adding a high-level **Memory, Reasoning, and Forecasting Layer**. It logs road behavior over time, constructs a causal graph to find the root causes of violation spikes, forecasts risk 24–72 hours into the future, and simulates interventions using a digital twin.
 
@@ -31,7 +30,7 @@ We shift the entire smart-city workflow from **"Detect & Fine"** to **"Understan
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 Our end-to-end pipeline operates in three distinct phases: the **Perception Layer**, the **Cognitive Intelligence Engine**, and the **Actionable Outputs**.
 
@@ -120,7 +119,7 @@ graph TD
 
 ---
 
-## 🧠 Core AI Engines Explained
+## Core AI Engines Explained
 
 ### 1. Road Memory & Violation DNA Engine
 Every road builds a living memory (using **TimescaleDB**). The DNA Engine profiles roads based on recurring offenses (e.g., *Market Zones* → Parking Violations; *Highway Zones* → Speeding). 
@@ -137,7 +136,7 @@ A virtual replica of the city's traffic grid. It allows authorities to test "Wha
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Domain | Technologies | Purpose |
 |---|---|---|
@@ -150,7 +149,7 @@ A virtual replica of the city's traffic grid. It allows authorities to test "Wha
 
 ---
 
-## 🗺️ Implementation Roadmap
+## Implementation Roadmap
 
 A phased, zero-disruption rollout model designed for massive urban scale:
 
@@ -172,11 +171,11 @@ A phased, zero-disruption rollout model designed for massive urban scale:
 
 ---
 
-## 📈 Expected Impact
+## Expected Impact
 
-- 🚀 **3x Faster** monitoring for traffic authorities.
-- 📉 **40% Reduction** in recurring traffic violations and accidents.
-- 🏙 **22% Decrease** in urban congestion.
-- 🎯 **70% Drop** in repeat offenses via predictive enforcement rather than reactive punishment.
+- **3x Faster** monitoring for traffic authorities.
+- **40% Reduction** in recurring traffic violations and accidents.
+- **22% Decrease** in urban congestion.
+- **70% Drop** in repeat offenses via predictive enforcement rather than reactive punishment.
 
 > **RoadMind-X transforms traffic enforcement into traffic intelligence. Building roads that learn, think, and prevent.**
