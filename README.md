@@ -3,7 +3,6 @@
 # RoadMind-X
 **From Detection to Prevention: A Cognitive Traffic Intelligence Platform**
 
-[![Track](https://img.shields.io/badge/Track-AI/ML_for_Smart_Cities-00D68F?style=for-the-badge)](https://github.com/)
 [![Status](https://img.shields.io/badge/Status-Prototype-FF6B1A?style=for-the-badge)](https://github.com/)
 
 *RoadMind-X doesn't just detect traffic violations — it remembers them, understands their causes, predicts their spread, simulates solutions, and prevents them before they happen.*
