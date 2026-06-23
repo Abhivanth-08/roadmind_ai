@@ -10,6 +10,10 @@
 
 ---
 
+> **⚠️ Hackathon Prototype Note:** The architecture detailed below represents the complete, large-scale enterprise vision of RoadMind-X. For this demonstration, we have isolated and built functional micro-prototypes of four specific core modules (Perception, Causality Graph Reasoning, Digital Twin Simulation, and the Strategist AI) to showcase the pipeline's end-to-end capabilities, rather than implementing the full production-scale platform.
+
+---
+
 ## The Problem: Reactive Enforcement
 
 Traffic management systems today are entirely **reactive**: violation → camera capture → fine generation (days later).
