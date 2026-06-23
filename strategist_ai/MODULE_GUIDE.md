@@ -25,4 +25,4 @@ According to the pitch deck, this layer MUST show:
         *   **Root Cause:** "Urban Graph traces the spike to a Hospital Shift Change."
         *   **Recommended Action:** "Deploy dynamic parking signs."
         *   **Simulated Impact:** "Digital Twin forecasts a 25% reduction in violations."
-4.  **Integration:** This Streamlit app will ultimately run on a local port, and Niranjana can embed it directly into the Digital Twin Dashboard UI using an HTML `<iframe>`, creating the final unified product.
+4.  **Integration:** This Streamlit app will ultimately run on a local port, and it can be embedded directly into the Digital Twin Dashboard UI using an HTML `<iframe>`, creating the final unified product.
