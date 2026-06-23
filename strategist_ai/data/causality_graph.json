@@ -1,0 +1,333 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "group": "Location",
+            "id": "5th Avenue"
+        },
+        {
+            "group": "Context",
+            "id": "Construction Work"
+        },
+        {
+            "group": "Violation",
+            "id": "Illegal Parking"
+        },
+        {
+            "group": "Violation",
+            "id": "Lane Violation"
+        },
+        {
+            "group": "Violation",
+            "id": "Speeding"
+        },
+        {
+            "group": "Violation",
+            "id": "Wrong-Way Driving"
+        },
+        {
+            "group": "Context",
+            "id": "Heavy Rain"
+        },
+        {
+            "group": "Violation",
+            "id": "Signal Jump"
+        },
+        {
+            "group": "Context",
+            "id": "Hospital Shift Change"
+        },
+        {
+            "group": "Context",
+            "id": "Local Festival"
+        },
+        {
+            "group": "Context",
+            "id": "None"
+        },
+        {
+            "group": "Context",
+            "id": "VIP Convoy"
+        },
+        {
+            "group": "Location",
+            "id": "Central Station Route"
+        },
+        {
+            "group": "Location",
+            "id": "City Hospital Junction"
+        },
+        {
+            "group": "Location",
+            "id": "MG Road"
+        },
+        {
+            "group": "Location",
+            "id": "Tech Park Blvd"
+        }
+    ],
+    "links": [
+        {
+            "weight": 9,
+            "source": "5th Avenue",
+            "target": "Illegal Parking"
+        },
+        {
+            "weight": 8,
+            "source": "5th Avenue",
+            "target": "Lane Violation"
+        },
+        {
+            "weight": 8,
+            "source": "5th Avenue",
+            "target": "Speeding"
+        },
+        {
+            "weight": 6,
+            "source": "5th Avenue",
+            "target": "Wrong-Way Driving"
+        },
+        {
+            "weight": 15,
+            "source": "5th Avenue",
+            "target": "Signal Jump"
+        },
+        {
+            "weight": 7,
+            "source": "Construction Work",
+            "target": "Illegal Parking"
+        },
+        {
+            "weight": 4,
+            "source": "Construction Work",
+            "target": "Lane Violation"
+        },
+        {
+            "weight": 3,
+            "source": "Construction Work",
+            "target": "Speeding"
+        },
+        {
+            "weight": 43,
+            "source": "Construction Work",
+            "target": "Wrong-Way Driving"
+        },
+        {
+            "weight": 10,
+            "source": "Illegal Parking",
+            "target": "Heavy Rain"
+        },
+        {
+            "weight": 4,
+            "source": "Illegal Parking",
+            "target": "Hospital Shift Change"
+        },
+        {
+            "weight": 9,
+            "source": "Illegal Parking",
+            "target": "Local Festival"
+        },
+        {
+            "weight": 7,
+            "source": "Illegal Parking",
+            "target": "None"
+        },
+        {
+            "weight": 9,
+            "source": "Illegal Parking",
+            "target": "VIP Convoy"
+        },
+        {
+            "weight": 5,
+            "source": "Illegal Parking",
+            "target": "Central Station Route"
+        },
+        {
+            "weight": 22,
+            "source": "Illegal Parking",
+            "target": "City Hospital Junction"
+        },
+        {
+            "weight": 13,
+            "source": "Illegal Parking",
+            "target": "MG Road"
+        },
+        {
+            "weight": 9,
+            "source": "Illegal Parking",
+            "target": "Tech Park Blvd"
+        },
+        {
+            "weight": 3,
+            "source": "Lane Violation",
+            "target": "Heavy Rain"
+        },
+        {
+            "weight": 6,
+            "source": "Lane Violation",
+            "target": "Hospital Shift Change"
+        },
+        {
+            "weight": 6,
+            "source": "Lane Violation",
+            "target": "Local Festival"
+        },
+        {
+            "weight": 7,
+            "source": "Lane Violation",
+            "target": "None"
+        },
+        {
+            "weight": 4,
+            "source": "Lane Violation",
+            "target": "VIP Convoy"
+        },
+        {
+            "weight": 4,
+            "source": "Lane Violation",
+            "target": "Central Station Route"
+        },
+        {
+            "weight": 9,
+            "source": "Lane Violation",
+            "target": "City Hospital Junction"
+        },
+        {
+            "weight": 10,
+            "source": "Lane Violation",
+            "target": "MG Road"
+        },
+        {
+            "weight": 4,
+            "source": "Lane Violation",
+            "target": "Tech Park Blvd"
+        },
+        {
+            "weight": 7,
+            "source": "Speeding",
+            "target": "Heavy Rain"
+        },
+        {
+            "weight": 7,
+            "source": "Speeding",
+            "target": "Hospital Shift Change"
+        },
+        {
+            "weight": 13,
+            "source": "Speeding",
+            "target": "Local Festival"
+        },
+        {
+            "weight": 7,
+            "source": "Speeding",
+            "target": "None"
+        },
+        {
+            "weight": 5,
+            "source": "Speeding",
+            "target": "VIP Convoy"
+        },
+        {
+            "weight": 12,
+            "source": "Speeding",
+            "target": "Central Station Route"
+        },
+        {
+            "weight": 3,
+            "source": "Speeding",
+            "target": "City Hospital Junction"
+        },
+        {
+            "weight": 12,
+            "source": "Speeding",
+            "target": "MG Road"
+        },
+        {
+            "weight": 5,
+            "source": "Speeding",
+            "target": "Tech Park Blvd"
+        },
+        {
+            "weight": 9,
+            "source": "Wrong-Way Driving",
+            "target": "Heavy Rain"
+        },
+        {
+            "weight": 6,
+            "source": "Wrong-Way Driving",
+            "target": "Hospital Shift Change"
+        },
+        {
+            "weight": 13,
+            "source": "Wrong-Way Driving",
+            "target": "Local Festival"
+        },
+        {
+            "weight": 7,
+            "source": "Wrong-Way Driving",
+            "target": "None"
+        },
+        {
+            "weight": 6,
+            "source": "Wrong-Way Driving",
+            "target": "VIP Convoy"
+        },
+        {
+            "weight": 7,
+            "source": "Wrong-Way Driving",
+            "target": "Central Station Route"
+        },
+        {
+            "weight": 7,
+            "source": "Wrong-Way Driving",
+            "target": "City Hospital Junction"
+        },
+        {
+            "weight": 6,
+            "source": "Wrong-Way Driving",
+            "target": "MG Road"
+        },
+        {
+            "weight": 43,
+            "source": "Wrong-Way Driving",
+            "target": "Tech Park Blvd"
+        },
+        {
+            "weight": 20,
+            "source": "Heavy Rain",
+            "target": "Signal Jump"
+        },
+        {
+            "weight": 14,
+            "source": "Signal Jump",
+            "target": "None"
+        },
+        {
+            "weight": 15,
+            "source": "Signal Jump",
+            "target": "VIP Convoy"
+        },
+        {
+            "weight": 31,
+            "source": "Signal Jump",
+            "target": "Central Station Route"
+        },
+        {
+            "weight": 10,
+            "source": "Signal Jump",
+            "target": "City Hospital Junction"
+        },
+        {
+            "weight": 16,
+            "source": "Signal Jump",
+            "target": "MG Road"
+        },
+        {
+            "weight": 15,
+            "source": "Signal Jump",
+            "target": "Tech Park Blvd"
+        }
+    ]
+}
