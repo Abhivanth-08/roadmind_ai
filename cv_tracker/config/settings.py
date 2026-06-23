@@ -1,7 +1,14 @@
 import os
+from dotenv import load_dotenv
 
 # Base directory of the project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Root directory of the repository
+ROOT_DIR = os.path.dirname(BASE_DIR)
+
+# Load environment variables (global .env takes precedence)
+load_dotenv(os.path.join(ROOT_DIR, ".env"))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Video Paths
 INPUT_VIDEO_PATH = os.path.join(BASE_DIR, "traffic.mp4")
@@ -38,7 +45,7 @@ ZONE_CAPACITY = 10         # capacity for density calculation (5 vehicles = 50% 
 
 # Storage Paths
 DB_TYPE = "postgres"  # Options: "postgres" or "sqlite"
-POSTGRES_CONN_STRING = "postgresql://neondb_owner:npg_zQtpojC8IW5l@ep-empty-union-ata61flz-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+POSTGRES_CONN_STRING = os.getenv("POSTGRES_CONN_STRING")
 DB_PATH = os.path.join(BASE_DIR, "traffic_memory.db")
 JSON_LOG_PATH = os.path.join(BASE_DIR, "events.json")
 
