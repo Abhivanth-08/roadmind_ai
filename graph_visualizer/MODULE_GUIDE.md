@@ -1,15 +1,29 @@
-# Causality Graph Visualizer (Cognitive Layer)
+# Causality Graph Visualizer (Cognitive Intelligence Layer)
 
 ## 🌍 Global Context
-The RoadMind-X system operates in three layers: Perception, Reasoning, and Prevention. 
-This module represents **Step 5 and Step 6** of the workflow. The system has already detected violations (via the CV Layer), but now it needs to figure out *why* they happened. This module is the "brain" linking traffic spikes to urban events (festivals, construction, etc.).
+This module represents the **Cognitive Intelligence Engine** (Steps 5 & 6). Once the CV Layer has logged evidence, this module takes over. It proves the core innovation of RoadMind-X: moving beyond simple detection by actually *reasoning* about the Root Cause of traffic patterns. 
 
-## 📊 How it interacts with Data
-You will use the `data/urban_memory_logs.json` file. 
-You need to write a script that parses this file and groups the data. For example, if there are 50 "Illegal Parking" events at "MG Road" and they all have the `urban_context` of "Hospital Shift Change", you will generate a node for "MG Road", a node for "Hospital Shift Change", and draw a thick red link between them. 
+For the hackathon demo, this will be a standalone web interface that visualizes the "Urban Memory Graph" and the "Causality Trace" algorithms.
 
-## 🛠️ How to Build It
-1.  **Tech Stack:** Use HTML/JavaScript or React.
-2.  **Library:** Import `react-force-graph` or `d3.js`.
-3.  **The Logic Hack:** Map the `locations` from the JSON to blue nodes, and `urban_context` to red nodes. The link thickness between them is based on how many violations occur between those two points.
-4.  **Interaction:** Make it so when a judge clicks the "MG Road" node, it highlights the exact causality path showing what is causing the traffic there. This visually proves the "Reasoning" aspect of your pitch.
+## 📐 Architecture Alignment (What you must demonstrate)
+According to the pitch deck, this layer MUST show:
+1.  **Urban Memory Graph:** Linking roads (internal data) with events (external context).
+2.  **Causality Engine:** Tracing the root cause of a violation spike.
+3.  **Road Memory & DNA:** Showing the historical profile of a location.
+
+## 🛠️ Step-by-Step Build Guide
+**Tech Stack:** React (or vanilla JS/HTML), `react-force-graph` (or D3.js), TailwindCSS.
+
+1.  **The Data Source:** Use the `data/urban_memory_logs.json` file. 
+2.  **Building the Graph Nodes:** 
+    *   Create three types of nodes in your visualization: 
+        *   🔵 **Location Nodes** (e.g., MG Road)
+        *   🔴 **Violation Nodes** (e.g., Illegal Parking Spike)
+        *   🟡 **Context Nodes** (e.g., Hospital Shift Change, Rain, Festival)
+3.  **The Causality Demo (The Hack):** 
+    *   The graph should load as a beautiful, floating 2D or 3D network.
+    *   Add a large button on the screen: `"Run Causality Analysis: MG Road"`.
+    *   When clicked, the app should highlight a specific path through the network (e.g., The line connects `Hospital Shift Change` → `Parking Overflow` → `MG Road Violations`) and dim the rest of the graph.
+4.  **Road DNA Panel:** 
+    *   When the user clicks on a "Location Node", open a side panel.
+    *   The panel should display the "Road DNA Profile" (e.g., "High Risk Time: 6 PM - 8 PM", "Primary Violation: Parking", "Historical Severity: Medium"). This proves the Road Memory Engine concept.

@@ -1,16 +1,29 @@
 # CV Tracker Module (Perception Layer)
 
 ## 🌍 Global Context
-The RoadMind-X system operates in three layers: Perception, Reasoning, and Prevention. 
-This module represents **Step 1 to Step 4** of the global workflow. Without this module, the AI has no "eyes". It is responsible for taking unstructured data (raw video pixels) and converting it into structured data (JSON logs of violations). 
+This module represents the **Perception Layer** of the RoadMind-X Architecture. It is responsible for Steps 1-4 of the pipeline: Image Capture, Object Detection, Violation Classification, OCR (Evidence Generation), and storing that data into the Road Memory.
 
-## 📊 How it interacts with Data
-The rest of the system relies on the `data/urban_memory_logs.json` file. 
-In a real-world scenario, this CV Tracker module would be continuously running on a server, and every time it spots a violation, it would append a new JSON object to that file. 
-For the hackathon, you will simulate this by reading a pre-recorded `.mp4` file, running YOLO detection, and printing out dummy log entries to the terminal that match the format in `urban_memory_logs.json`.
+Because we are demonstrating modules separately for the hackathon, this module doesn't need to connect to a live city grid. Instead, it will be a standalone Python script that processes a local video file and generates a rich JSON "Evidence Log" that proves the computer vision pipeline works perfectly.
 
-## 🛠️ How to Build It
-1.  **Input:** Find a 2-3 minute YouTube video of a busy intersection.
-2.  **Model:** Install `ultralytics` and use `YOLOv8n` (or v12 if available) to draw bounding boxes on cars.
-3.  **The Logic Hack:** Draw a polygon on the screen representing a "No Parking Zone" or "Wrong-Way Zone" using OpenCV. If a YOLO bounding box center intersects with that polygon for more than 5 seconds, trigger an event.
-4.  **Output:** Use `cv2.putText` to flash a warning on the video frame: `"Road Memory Engine: Violation DNA logged to database."`
+## 📐 Architecture Alignment (What you must demonstrate)
+According to the pitch deck, this layer MUST show:
+1.  **Vehicle Detection:** Tracking cars/bikes.
+2.  **Violation Detection:** Identifying *what* rule was broken (e.g., Signal Jump, Wrong Way, Illegal Parking).
+3.  **ANPR & OCR Engine:** Reading the license plate of the violating vehicle.
+4.  **Evidence Generation & Storage:** Saving a structured record of the incident.
+
+## 🛠️ Step-by-Step Build Guide
+**Tech Stack:** Python, OpenCV (`cv2`), Ultralytics (YOLO), EasyOCR (or PaddleOCR).
+
+1.  **The Input Video:** Download a short (1-2 min) traffic video. 
+2.  **Detection (YOLO):** Use YOLO to draw bounding boxes around vehicles.
+3.  **Violation Logic (The Hack):** 
+    *   Draw a polygon on the frame using OpenCV (e.g., a red box representing a "No Parking Zone").
+    *   Write logic: If a vehicle's bounding box stays inside the red polygon for >3 seconds, flag `violation_type = "Illegal Parking"`.
+4.  **OCR Integration:** 
+    *   When the violation triggers, crop the bounding box of the car.
+    *   Pass the cropped image to `EasyOCR`. *(Hackathon tip: If OCR fails on blurry video, hardcode a mock license plate generator that triggers when a violation occurs, e.g., "TN-01-AB-1234").*
+5.  **Evidence Storage:** 
+    *   Write the incident to a local file called `live_evidence_log.json`. 
+    *   The payload MUST include: `timestamp`, `location`, `violation_type`, `vehicle_number`, and `confidence_score`.
+6.  **The Visual Output:** The final `.mp4` output should have an overlay on the side that acts as a "Live Event Feed", printing exactly what the AI is seeing and storing.

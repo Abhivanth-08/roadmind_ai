@@ -1,16 +1,28 @@
-# Strategist AI Chatbot (Action Layer)
+# Strategist AI Chatbot (Actionable Outputs Layer)
 
 ## 🌍 Global Context
-The RoadMind-X system operates in three layers: Perception, Reasoning, and Prevention. 
-This module represents **Step 10** of the workflow—the final output. After the CV detects the car, the Graph finds the cause, and the Twin simulates a fix, the authorities need to know what to do in plain English. That is the job of the Strategist AI. It takes complex mathematical data and makes it "Explainable."
+This module represents the final **Step 10** of the pipeline. The CV Layer collected the data, the Graph found the root cause, and the Digital Twin simulated the fix. But raw data and charts can be overwhelming for government officials. 
 
-## 📊 How it interacts with Data
-You will load the `data/urban_memory_logs.json` file. 
-You will not show this file to the user. Instead, you will pass this massive JSON block to a Large Language Model (like Gemini or OpenAI) as a *hidden system prompt*. 
-You will instruct the LLM: `"You are RoadMind-X Strategist AI. The attached JSON is live city data. Answer the user's questions based strictly on this data."`
+The Strategist AI acts as the translation layer. It is an explainable LLM that turns complex mathematical simulations into clear, actionable, plain-English policies for city planners.
 
-## 🛠️ How to Build It
-1.  **Tech Stack:** Python, Streamlit, and an LLM API (Google Gemini API is free and fast).
-2.  **Interface:** Use `st.chat_input` and `st.chat_message` to build a clean chat interface.
-3.  **The Logic Hack:** When the user types: `"Why are there so many violations at City Hospital Junction?"`, the LLM will scan the JSON, see the `urban_context` is "Hospital Shift Change", and reply: *"There has been a 40% spike in Illegal Parking due to the Hospital Shift Change. I recommend we Reroute Traffic, which is simulated to reduce violations by 25%."*
-4.  **Integration:** This Streamlit app can later be embedded via an iframe into the Digital Twin Dashboard, creating a seamless unified system.
+## 📐 Architecture Alignment (What you must demonstrate)
+According to the pitch deck, this layer MUST show:
+1.  **Explainable AI Outputs:** Translating raw causality paths into human-readable advice.
+2.  **Confidence-Ranked Recommendations:** Providing the planner with the highest-probability fix.
+3.  **Cross-layer Awareness:** Proving the Chatbot actually "knows" about the Graph and Digital Twin data.
+
+## 🛠️ Step-by-Step Build Guide
+**Tech Stack:** Python, Streamlit, Google Gemini API (or OpenAI).
+
+1.  **The LLM Integration:** Set up a simple Streamlit interface with a chat box. Connect it to the Gemini API using an API key.
+2.  **Context Injection (The Hack):** 
+    *   Load the `data/urban_memory_logs.json` file in Python.
+    *   Prepend this JSON data to the system prompt (invisible to the user).
+    *   System Prompt Example: `"You are RoadMind-X Strategist AI. You analyze urban memory graphs and digital twin simulations. Based on the attached JSON data, answer user questions like an expert traffic advisor."`
+3.  **The Live Demo Chat:**
+    *   **User Types:** `"Why are violations up by 18% on MG Road today, and what should we do?"`
+    *   **AI Replies:** The AI scans the JSON, notices the "Hospital Shift Change" cause and the simulated intervention data. It should output a beautifully formatted markdown response:
+        *   **Root Cause:** "Urban Graph traces the spike to a Hospital Shift Change."
+        *   **Recommended Action:** "Deploy dynamic parking signs."
+        *   **Simulated Impact:** "Digital Twin forecasts a 25% reduction in violations."
+4.  **Integration:** This Streamlit app will ultimately run on a local port, and Niranjana can embed it directly into the Digital Twin Dashboard UI using an HTML `<iframe>`, creating the final unified product.
