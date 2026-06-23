@@ -1,0 +1,24 @@
+# ── Unified requirements.txt for RoadMind-X ──────────────────────────
+
+# CV Tracker & Video Handling
+numpy>=1.23.0
+opencv-python>=4.8.0
+psycopg2-binary>=2.9.0
+python-dotenv>=1.0.0
+Pillow==11.2.1
+
+# Graph Intelligence & Visualization
+networkx==3.5
+pyvis==0.3.2
+plotly==6.1.2
+
+# Dashboards & Web UI Frameworks
+streamlit==1.45.1
+fastapi==0.116.1
+uvicorn==0.35.0
+pydantic==2.11.7
+python-multipart==0.0.20
+requests
+
+# LLM Services
+groq==0.28.0
