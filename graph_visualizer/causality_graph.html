@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 450px;
+                 background-color: #0F172A;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"font": {"color": "white"}, "group": "Location", "id": "City Hospital Junction", "label": "City Hospital Junction", "shape": "dot", "size": 30, "title": "RME Node: City Hospital Junction"}, {"font": {"color": "white"}, "group": "Violation", "id": "Lane Violation", "label": "Lane Violation", "shape": "dot", "size": 20, "title": "Incident: Lane Violation"}, {"font": {"color": "white"}, "group": "Violation", "id": "Speeding", "label": "Speeding", "shape": "dot", "size": 20, "title": "Incident: Speeding"}, {"font": {"color": "white"}, "group": "Violation", "id": "Wrong-Way Driving", "label": "Wrong-Way Driving", "shape": "dot", "size": 20, "title": "Incident: Wrong-Way Driving"}, {"font": {"color": "white"}, "group": "Violation", "id": "Signal Jump", "label": "Signal Jump", "shape": "dot", "size": 20, "title": "Incident: Signal Jump"}, {"font": {"color": "white"}, "group": "Violation", "id": "Illegal Parking", "label": "Illegal Parking", "shape": "dot", "size": 20, "title": "Incident: Illegal Parking"}, {"font": {"color": "white"}, "group": "Context", "id": "Construction Work", "label": "Construction Work", "shape": "dot", "size": 25, "title": "UMG Node: Construction Work"}, {"font": {"color": "white"}, "group": "Context", "id": "Heavy Rain", "label": "Heavy Rain", "shape": "dot", "size": 25, "title": "UMG Node: Heavy Rain"}, {"font": {"color": "white"}, "group": "Context", "id": "Hospital Shift Change", "label": "Hospital Shift Change", "shape": "dot", "size": 25, "title": "UMG Node: Hospital Shift Change"}, {"font": {"color": "white"}, "group": "Context", "id": "Local Festival", "label": "Local Festival", "shape": "dot", "size": 25, "title": "UMG Node: Local Festival"}, {"font": {"color": "white"}, "group": "Context", "id": "None", "label": "None", "shape": "dot", "size": 25, "title": "UMG Node: None"}, {"font": {"color": "white"}, "group": "Context", "id": "VIP Convoy", "label": "VIP Convoy", "shape": "dot", "size": 25, "title": "UMG Node: VIP Convoy"}]);
+                  edges = new vis.DataSet([{"color": "#EA580C", "from": "City Hospital Junction", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 9 incidents caused by this link", "to": "Lane Violation", "value": 9, "width": 4.5}, {"color": "#EA580C", "from": "City Hospital Junction", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 3 incidents caused by this link", "to": "Speeding", "value": 3, "width": 1.5}, {"color": "#EA580C", "from": "City Hospital Junction", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 7 incidents caused by this link", "to": "Wrong-Way Driving", "value": 7, "width": 3.5}, {"color": "#EA580C", "from": "City Hospital Junction", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 10 incidents caused by this link", "to": "Signal Jump", "value": 10, "width": 5.0}, {"color": "#EA580C", "from": "City Hospital Junction", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 22 incidents caused by this link", "to": "Illegal Parking", "value": 22, "width": 11.0}, {"color": "#EA580C", "from": "Construction Work", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 7 incidents caused by this link", "to": "Lane Violation", "value": 7, "width": 3.5}, {"color": "#EA580C", "from": "Construction Work", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 9 incidents caused by this link", "to": "Speeding", "value": 9, "width": 4.5}, {"color": "#EA580C", "from": "Construction Work", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 8 incidents caused by this link", "to": "Wrong-Way Driving", "value": 8, "width": 4.0}, {"color": "#EA580C", "from": "Lane Violation", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 10 incidents caused by this link", "to": "Heavy Rain", "value": 10, "width": 5.0}, {"color": "#EA580C", "from": "Lane Violation", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 7 incidents caused by this link", "to": "Hospital Shift Change", "value": 7, "width": 3.5}, {"color": "#EA580C", "from": "Lane Violation", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 6 incidents caused by this link", "to": "Local Festival", "value": 6, "width": 3.0}, {"color": "#EA580C", "from": "Lane Violation", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 4 incidents caused by this link", "to": "None", "value": 4, "width": 2.0}, {"color": "#EA580C", "from": "Lane Violation", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 9 incidents caused by this link", "to": "VIP Convoy", "value": 9, "width": 4.5}, {"color": "#EA580C", "from": "Speeding", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 13 incidents caused by this link", "to": "Heavy Rain", "value": 13, "width": 6.5}, {"color": "#EA580C", "from": "Speeding", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 14 incidents caused by this link", "to": "Hospital Shift Change", "value": 14, "width": 7.0}, {"color": "#EA580C", "from": "Speeding", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 10 incidents caused by this link", "to": "Local Festival", "value": 10, "width": 5.0}, {"color": "#EA580C", "from": "Speeding", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 7 incidents caused by this link", "to": "None", "value": 7, "width": 3.5}, {"color": "#EA580C", "from": "Speeding", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 3 incidents caused by this link", "to": "VIP Convoy", "value": 3, "width": 1.5}, {"color": "#EA580C", "from": "Wrong-Way Driving", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 12 incidents caused by this link", "to": "Heavy Rain", "value": 12, "width": 6.0}, {"color": "#EA580C", "from": "Wrong-Way Driving", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 8 incidents caused by this link", "to": "Hospital Shift Change", "value": 8, "width": 4.0}, {"color": "#EA580C", "from": "Wrong-Way Driving", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 9 incidents caused by this link", "to": "Local Festival", "value": 9, "width": 4.5}, {"color": "#EA580C", "from": "Wrong-Way Driving", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 8 incidents caused by this link", "to": "None", "value": 8, "width": 4.0}, {"color": "#EA580C", "from": "Wrong-Way Driving", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 7 incidents caused by this link", "to": "VIP Convoy", "value": 7, "width": 3.5}, {"color": "#EA580C", "from": "Heavy Rain", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 18 incidents caused by this link", "to": "Signal Jump", "value": 18, "width": 9.0}, {"color": "#EA580C", "from": "Signal Jump", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 13 incidents caused by this link", "to": "None", "value": 13, "width": 6.5}, {"color": "#EA580C", "from": "Signal Jump", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 10 incidents caused by this link", "to": "VIP Convoy", "value": 10, "width": 5.0}, {"color": "#EA580C", "from": "Hospital Shift Change", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 29 incidents caused by this link", "to": "Illegal Parking", "value": 29, "width": 14.5}, {"color": "#EA580C", "from": "Illegal Parking", "title": "\ud83d\udd25 CAUSALITY TRACE FOUND: 22 incidents caused by this link", "to": "Local Festival", "value": 22, "width": 11.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -50, "centralGravity": 0.01, "springLength": 100}, "minVelocity": 0.75, "solver": "forceAtlas2Based"}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

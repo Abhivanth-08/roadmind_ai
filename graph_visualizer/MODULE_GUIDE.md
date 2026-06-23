@@ -14,7 +14,7 @@ According to the `README.md` architecture diagram, you must demonstrate the flow
 *   **CG:** Causality Graph (The final reasoning output)
 
 ## 🛠️ Step-by-Step Build Guide
-**Tech Stack:** React (or vanilla JS/HTML), `react-force-graph` (or D3.js), TailwindCSS.
+**Tech Stack:** Python, Streamlit, NetworkX, and PyVis (for the interactive network graph).
 
 1.  **The Data Source (RME input):** Use the `data/urban_memory_logs.json` file. 
 2.  **Building the Graph Nodes (UMG & DNA):** 

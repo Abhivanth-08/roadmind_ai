@@ -16,8 +16,9 @@ According to the `README.md` architecture diagram, the Strategist AI MUST direct
 ## 🛠️ Step-by-Step Build Guide
 **Tech Stack:** Python, Streamlit (configured to Dark Mode), and the Gemini Vision API.
 
-1.  **The Hidden Brain (`ai_context.json`):** 
-    *   Load the `ai_context.json` file in your Python script.
+1.  **The Hidden Brain (`ai_context.json` & `causality_graph.json`):** 
+    *   Load both the `ai_context.json` and `causality_graph.json` files in your Python script.
+    *   `causality_graph.json` contains the mathematical nodes and edges of the Urban Graph. You can feed this data to the LLM so it "understands" the causality connections, or use it to visually render a network graph inside the chat!
     *   Prepend this JSON data to the system prompt (invisible to the user).
     *   *System Prompt Example:* `"You are RoadMind-X Strategist AI. You analyze urban graphs and digital twin simulations. Based strictly on the attached JSON data, generate Violation Reports, Root Cause Analysis, and Policy Recommendations. Always format your responses using markdown tables and bullet points."*
 
