@@ -1,4 +1,5 @@
 files/
+digital_twin_ui/frontend/node_modules
 __pycache__/
 *.pyc
 .env
