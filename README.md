@@ -176,4 +176,22 @@ A phased, zero-disruption rollout model designed for massive urban scale:
 - **22% Decrease** in urban congestion.
 - **70% Drop** in repeat offenses via predictive enforcement rather than reactive punishment.
 
+---
+
+## CV Tracker Output Snapshots
+
+Below are representative snapshots showing the real-time HUD dashboard, vehicle detection bounding boxes, and monitoring zone overlay during CV tracker processing:
+
+### 1. Initial State / HUD Layout
+![Initial HUD State](cv_tracker/outputs/snapshot_frame_5.png)
+
+### 2. Vehicle Detection & Status Tracking
+![Detection HUD Overlay](cv_tracker/outputs/snapshot_frame_30.png)
+
+### 3. Processing & Performance Metrics
+![Analytical Dashboard Progression](cv_tracker/outputs/snapshot_frame_65.png)
+
+---
+
 > **RoadMind-X transforms traffic enforcement into traffic intelligence. Building roads that learn, think, and prevent.**
+
