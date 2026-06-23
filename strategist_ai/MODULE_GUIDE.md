@@ -1,28 +1,37 @@
-# Strategist AI Chatbot (Actionable Outputs Layer)
+# Strategist AI Chatbot (Cognitive Intelligence to Actionable Outputs)
 
 ## 🌍 Global Context
-This module represents the final **Step 10** of the pipeline. The CV Layer collected the data, the Graph found the root cause, and the Digital Twin simulated the fix. But raw data and charts can be overwhelming for government officials. 
+This module represents the final bridging node (`TSA` - Traffic Strategist AI) in the RoadMind-X pipeline. According to the architecture diagram, it sits at the very end of the **Cognitive Intelligence Engine** and is responsible for feeding all 7 of the **Actionable Outputs** (O1 to O7). 
 
-The Strategist AI acts as the translation layer. It is an explainable LLM that turns complex mathematical simulations into clear, actionable, plain-English policies for city planners.
+After the CV Layer collects data, the Graph finds the root cause, and the Digital Twin/Intervention Engine simulates the fix, the Strategist AI translates these complex mathematical simulations into human-readable policies and dashboards.
 
-## 📐 Architecture Alignment (What you must demonstrate)
-According to the pitch deck, this layer MUST show:
-1.  **Explainable AI Outputs:** Translating raw causality paths into human-readable advice.
-2.  **Confidence-Ranked Recommendations:** Providing the planner with the highest-probability fix.
-3.  **Cross-layer Awareness:** Proving the Chatbot actually "knows" about the Graph and Digital Twin data.
+## 📐 Architecture Alignment & Aesthetics
+According to the `README.md` architecture diagram, the Strategist AI MUST directly output or address:
+1.  **O1 & O2:** Violation Reports & Hotspot Detection
+2.  **O3 & O4:** Root Cause Analysis & Future Violation Forecast
+3.  **O5 & O6:** Policy Recommendations & Dynamic Traffic Management
+4.  **Multimodal & Visual:** The AI shouldn't just output text; it should output charts, tables, and metrics directly inside the chat window.
+5.  **Premium Aesthetics:** It must be set to a dark "cyber" theme so it looks like enterprise command-center software.
 
 ## 🛠️ Step-by-Step Build Guide
-**Tech Stack:** Python, Streamlit, Google Gemini API (or OpenAI).
+**Tech Stack:** Python, Streamlit (configured to Dark Mode), and the Gemini Vision API.
 
-1.  **The LLM Integration:** Set up a simple Streamlit interface with a chat box. Connect it to the Gemini API using an API key.
-2.  **Context Injection (The Hack):** 
-    *   Load the `data/urban_memory_logs.json` file in Python.
+1.  **The Hidden Brain (`ai_context.json`):** 
+    *   Load the `ai_context.json` file in your Python script.
     *   Prepend this JSON data to the system prompt (invisible to the user).
-    *   System Prompt Example: `"You are RoadMind-X Strategist AI. You analyze urban memory graphs and digital twin simulations. Based on the attached JSON data, answer user questions like an expert traffic advisor."`
-3.  **The Live Demo Chat:**
-    *   **User Types:** `"Why are violations up by 18% on MG Road today, and what should we do?"`
-    *   **AI Replies:** The AI scans the JSON, notices the "Hospital Shift Change" cause and the simulated intervention data. It should output a beautifully formatted markdown response:
-        *   **Root Cause:** "Urban Graph traces the spike to a Hospital Shift Change."
-        *   **Recommended Action:** "Deploy dynamic parking signs."
-        *   **Simulated Impact:** "Digital Twin forecasts a 25% reduction in violations."
-4.  **Integration:** This Streamlit app will ultimately run on a local port, and it can be embedded directly into the Digital Twin Dashboard UI using an HTML `<iframe>`, creating the final unified product.
+    *   *System Prompt Example:* `"You are RoadMind-X Strategist AI. You analyze urban graphs and digital twin simulations. Based strictly on the attached JSON data, generate Violation Reports, Root Cause Analysis, and Policy Recommendations. Always format your responses using markdown tables and bullet points."*
+
+2.  **The User Interface & Image Upload:**
+    *   Use `st.sidebar` to display the "Overall City Health Score" and "Active Alerts" directly from the JSON so the UI feels alive.
+    *   Add `st.file_uploader` so the user can upload a fake CCTV snapshot of a traffic jam.
+
+3.  **The Live Demo Chat (How the AI MUST Reply):**
+    *   **User Uploads:** A picture of traffic at MG Road.
+    *   **User Types:** `"Generate a hotspot report for this frame, including the root cause analysis and a policy recommendation."`
+    *   **AI Replies:** The AI scans the image and the JSON, hitting all your architecture nodes:
+        *   **Hotspot & Root Cause (O2, O3):** *"I have cross-referenced the image. The hotspot is **MG Road**, and the root cause is a **Hospital Shift Change**."*
+        *   **Future Forecast (O4):** *"Violations are forecasted to rise by 18%."*
+        *   **Policy Recommendation & Dynamic Mgmt (O5, O6):** A Markdown table comparing interventions (e.g., Deploy Police vs. Dynamic Signs).
+        *   *Streamlit Hack:* If you are using Streamlit, you can write a python `if` condition to dynamically render a small `st.bar_chart()` *inside the chat message* showing the predicted drop in violations.
+
+4.  **Integration (O7 - Smart City Dashboard):** This Streamlit app will ultimately run on a local port, and it can be embedded directly into the Digital Twin Dashboard UI using an HTML `<iframe>`, creating the final unified O7 Smart City Dashboard.
