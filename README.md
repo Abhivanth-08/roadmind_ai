@@ -6,7 +6,6 @@
 [![Status](https://img.shields.io/badge/Status-Prototype-FF6B1A?style=for-the-badge)](https://github.com/)
 
 *RoadMind-X doesn't just detect traffic violations — it remembers them, understands their causes, predicts their spread, simulates solutions, and prevents them before they happen.*
-
 </div>
 
 ---
