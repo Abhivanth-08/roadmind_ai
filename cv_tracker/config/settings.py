@@ -38,7 +38,7 @@ ZONE_CAPACITY = 10         # capacity for density calculation (5 vehicles = 50% 
 
 # Storage Paths
 DB_TYPE = "postgres"  # Options: "postgres" or "sqlite"
-POSTGRES_CONN_STRING = "postgresql://neondb_owner:npg_kUd6gJOh1CcV@ep-empty-union-ata61flz-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+POSTGRES_CONN_STRING = "postgresql://neondb_owner:npg_zQtpojC8IW5l@ep-empty-union-ata61flz-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 DB_PATH = os.path.join(BASE_DIR, "traffic_memory.db")
 JSON_LOG_PATH = os.path.join(BASE_DIR, "events.json")
 
