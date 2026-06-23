@@ -155,19 +155,19 @@ A virtual replica of the city's traffic grid. It allows authorities to test "Wha
 
 A phased, zero-disruption rollout model designed for massive urban scale:
 
-1. **Phase 1: Detection + OCR (Months 1-3)**
+1. **Phase 1: Detection + OCR**
    - YOLOv12/RT-DETR deployment on existing CCTV networks.
    - PaddleOCR setup for flawless ANPR and Evidence Generation.
-2. **Phase 2: Road Memory Engine (Months 4-6)**
+2. **Phase 2: Road Memory Engine**
    - TimescaleDB setup and memory schema design.
    - Initial ingestion of temporal patterns and DNA profiling.
-3. **Phase 3: Graph Intelligence (Months 7-9)**
+3. **Phase 3: Graph Intelligence**
    - Neo4j deployment and Urban Memory Graph build.
    - Causality engine and Graph Neural Network (GNN) training.
-4. **Phase 4: Forecast Engine (Months 10-12)**
+4. **Phase 4: Forecast Engine**
    - Temporal Fusion Transformer (TFT) model deployment.
    - Risk score APIs, early-alert systems, and dashboard integration.
-5. **Phase 5: Digital Twin + Strategist AI (Months 13-18)**
+5. **Phase 5: Digital Twin + Strategist AI**
    - Simulation engine live for "What-If" policy testing.
    - Signal optimization automation and city-wide intelligent scaling.
 
