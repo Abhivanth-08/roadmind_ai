@@ -28,3 +28,18 @@ According to the `README.md` architecture diagram, you must demonstrate the flow
     *   When clicked, the app should highlight a specific path through the network (e.g., The line connects `Hospital Shift Change` → `Parking Overflow` → `MG Road Violations`) and dim the rest of the graph.
 4.  **Road DNA Panel:** 
     *   When the user clicks on a "Location Node", open a side panel showing the **Violation DNA Engine (DNA)** profile (e.g., "High Risk Time: 6 PM - 8 PM", "Primary Violation: Parking").
+
+
+## ?? Output Snapshots
+
+### 1. Road Memory DNA Chart
+![Historical Violation DNA](image/dna_chart.png)
+
+### 2. Urban Memory Graph (Base State)
+![Urban Memory Graph](image/graph_base.png)
+
+### 3. Graph Correlation Hover
+![Correlation Hover](image/graph_hover.png)
+
+### 4. Causality Trace Engine
+![Causality Trace Found](image/cg_hover.png)

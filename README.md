@@ -193,5 +193,23 @@ Below are representative snapshots showing the real-time HUD dashboard, vehicle 
 
 ---
 
+## Cognitive Intelligence Output Snapshots
+
+Below are representative snapshots from the Graph Visualizer module showing the Road DNA profiling and the interactive Causality Trace graph:
+
+### 1. Road Memory DNA Chart
+![Historical Violation DNA](graph_visualizer/image/dna_chart.png)
+
+### 2. Urban Memory Graph (Base State)
+![Urban Memory Graph](graph_visualizer/image/graph_base.png)
+
+### 3. Graph Correlation Hover
+![Correlation Hover](graph_visualizer/image/graph_hover.png)
+
+### 4. Causality Trace Engine
+![Causality Trace Found](graph_visualizer/image/cg_hover.png)
+
+---
+
 > **RoadMind-X transforms traffic enforcement into traffic intelligence. Building roads that learn, think, and prevent.**
 
