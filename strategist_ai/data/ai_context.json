@@ -1,0 +1,73 @@
+{
+    "system_status": {
+        "last_updated": "2026-06-23T14:30:00Z",
+        "active_alerts": 3,
+        "overall_city_health_score": 72
+    },
+    "hotspots": [
+        {
+            "location": "MG Road",
+            "current_issue": "Spike in Illegal Parking",
+            "severity": "High",
+            "violation_increase_percentage": 18,
+            "root_cause_analysis": {
+                "primary_cause": "Hospital Shift Change overlapping with VIP Convoy",
+                "causality_confidence": 0.94
+            },
+            "digital_twin_simulations": [
+                {
+                    "intervention_tested": "Deploy Traffic Police",
+                    "forecasted_impact": "-10% violations",
+                    "cost_estimate": "High"
+                },
+                {
+                    "intervention_tested": "Deploy Dynamic Parking Signs",
+                    "forecasted_impact": "-25% violations",
+                    "cost_estimate": "Low",
+                    "recommended": true
+                }
+            ]
+        },
+        {
+            "location": "Tech Park Blvd",
+            "current_issue": "Wrong-Way Driving",
+            "severity": "Critical",
+            "violation_increase_percentage": 35,
+            "root_cause_analysis": {
+                "primary_cause": "Unplanned Construction Work blocking main arterial lane",
+                "causality_confidence": 0.88
+            },
+            "digital_twin_simulations": [
+                {
+                    "intervention_tested": "Increase Fine Rate via ANPR",
+                    "forecasted_impact": "-5% violations",
+                    "cost_estimate": "Low"
+                },
+                {
+                    "intervention_tested": "Temporarily Reroute Traffic to 5th Avenue",
+                    "forecasted_impact": "-42% violations",
+                    "cost_estimate": "Medium",
+                    "recommended": true
+                }
+            ]
+        },
+        {
+            "location": "City Hospital Junction",
+            "current_issue": "Signal Jumping",
+            "severity": "Medium",
+            "violation_increase_percentage": 12,
+            "root_cause_analysis": {
+                "primary_cause": "Heavy Rain causing poor visibility of traffic lights",
+                "causality_confidence": 0.76
+            },
+            "digital_twin_simulations": [
+                {
+                    "intervention_tested": "Adjust Signal Timing (Add 10s to Yellow)",
+                    "forecasted_impact": "-18% violations",
+                    "cost_estimate": "Zero",
+                    "recommended": true
+                }
+            ]
+        }
+    ]
+}

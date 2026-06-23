@@ -1,0 +1,722 @@
+/* ============================================================
+   RoadMind-X Strategist AI — Global Stylesheet
+   Theme: Dark Cyber Command Center
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── App Shell ────────────────────────────────────────────── */
+.stApp {
+    background-color: #0D1117 !important;
+    color: #E6EDF3 !important;
+}
+
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2.5rem !important;
+    max-width: 100% !important;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background-color: #010409 !important;
+    border-right: 1px solid #21262D !important;
+    padding-top: 0 !important;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 0 !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: #E6EDF3 !important;
+}
+
+[data-testid="stSidebarContent"] {
+    padding: 1rem 1rem !important;
+}
+
+/* ── Tab Navigation ───────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: #161B22 !important;
+    border-bottom: 1px solid #30363D !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 0 6px !important;
+    gap: 0 !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background-color: transparent !important;
+    color: #7D8590 !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    font-weight: 500 !important;
+    font-size: 0.84rem !important;
+    padding: 12px 20px !important;
+    letter-spacing: 0.1px !important;
+    transition: color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: #CDD9E5 !important;
+    background-color: rgba(255,255,255,0.04) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #2F81F7 !important;
+    border-bottom: 2px solid #2F81F7 !important;
+    font-weight: 600 !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    background-color: transparent !important;
+    padding: 0 !important;
+    padding-top: 1.25rem !important;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.stButton > button {
+    background-color: #21262D !important;
+    color: #CDD9E5 !important;
+    border: 1px solid #30363D !important;
+    border-radius: 6px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.81rem !important;
+    font-weight: 500 !important;
+    padding: 6px 16px !important;
+    transition: all 0.12s ease !important;
+    letter-spacing: 0.1px !important;
+}
+
+.stButton > button:hover {
+    background-color: #30363D !important;
+    border-color: #2F81F7 !important;
+    color: #E6EDF3 !important;
+}
+
+.stButton > button:active {
+    transform: translateY(1px) !important;
+}
+
+/* Primary action button */
+.stButton > button[kind="primary"],
+button[data-testid="baseButton-primary"] {
+    background-color: #1F6FEB !important;
+    color: #FFFFFF !important;
+    border-color: #1F6FEB !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background-color: #2F81F7 !important;
+    border-color: #2F81F7 !important;
+}
+
+/* ── Chat Input ───────────────────────────────────────────── */
+[data-testid="stChatInput"] {
+    background-color: #161B22 !important;
+    border: 1px solid #30363D !important;
+    border-radius: 10px !important;
+}
+
+[data-testid="stChatInput"] textarea {
+    background-color: #161B22 !important;
+    color: #E6EDF3 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.875rem !important;
+    caret-color: #2F81F7 !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #7D8590 !important;
+}
+
+[data-testid="stChatInput"] textarea:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+[data-testid="stChatInput"]:focus-within {
+    border-color: #2F81F7 !important;
+    box-shadow: 0 0 0 3px rgba(47, 129, 247, 0.12) !important;
+}
+
+/* ── Chat Messages ────────────────────────────────────────── */
+[data-testid="stChatMessage"] {
+    background-color: #161B22 !important;
+    border: 1px solid #30363D !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+    padding: 4px 2px !important;
+}
+
+/* User message — subtle left accent */
+[data-testid="stChatMessage"][data-testid*="user"] {
+    border-left: 3px solid #2F81F7 !important;
+}
+
+/* Message text */
+[data-testid="stChatMessage"] p {
+    color: #E6EDF3 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0.5em !important;
+}
+
+/* Markdown tables inside chat */
+[data-testid="stChatMessage"] table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    font-size: 0.82rem !important;
+    margin: 0.75em 0 !important;
+}
+
+[data-testid="stChatMessage"] th {
+    background-color: #21262D !important;
+    border: 1px solid #30363D !important;
+    padding: 8px 14px !important;
+    font-weight: 600 !important;
+    color: #E6EDF3 !important;
+    text-align: left !important;
+    letter-spacing: 0.2px !important;
+}
+
+[data-testid="stChatMessage"] td {
+    border: 1px solid #30363D !important;
+    padding: 7px 14px !important;
+    color: #CDD9E5 !important;
+}
+
+[data-testid="stChatMessage"] tr:nth-child(even) td {
+    background-color: rgba(33, 38, 45, 0.6) !important;
+}
+
+/* Code blocks inside chat */
+[data-testid="stChatMessage"] code {
+    background-color: #21262D !important;
+    border-radius: 4px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.79rem !important;
+    padding: 1px 5px !important;
+    color: #E6EDF3 !important;
+}
+
+[data-testid="stChatMessage"] pre {
+    background-color: #21262D !important;
+    border: 1px solid #30363D !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+}
+
+[data-testid="stChatMessage"] pre code {
+    background: none !important;
+    padding: 0 !important;
+    font-size: 0.8rem !important;
+}
+
+/* Headings inside chat */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3 {
+    color: #E6EDF3 !important;
+    font-weight: 600 !important;
+    margin-top: 1.1em !important;
+    margin-bottom: 0.4em !important;
+    border-bottom: 1px solid #21262D !important;
+    padding-bottom: 4px !important;
+}
+
+[data-testid="stChatMessage"] h2 { font-size: 1rem !important; }
+[data-testid="stChatMessage"] h3 { font-size: 0.9rem !important; }
+
+/* ── File Uploader ────────────────────────────────────────── */
+[data-testid="stFileUploader"] {
+    background-color: #161B22 !important;
+    border: 1px dashed #30363D !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    transition: border-color 0.15s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #2F81F7 !important;
+}
+
+[data-testid="stFileUploader"] * {
+    color: #7D8590 !important;
+}
+
+[data-testid="stFileUploader"] small {
+    font-size: 0.72rem !important;
+}
+
+/* ── Metric Cards ─────────────────────────────────────────── */
+[data-testid="stMetric"] {
+    background-color: #161B22 !important;
+    border: 1px solid #30363D !important;
+    border-radius: 8px !important;
+    padding: 16px 18px !important;
+}
+
+[data-testid="stMetric"] label,
+[data-testid="stMetricLabel"] {
+    color: #7D8590 !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.7px !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #E6EDF3 !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 0.78rem !important;
+}
+
+/* ── Expander ─────────────────────────────────────────────── */
+[data-testid="stExpander"] {
+    background-color: #161B22 !important;
+    border: 1px solid #30363D !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stExpander"] summary {
+    color: #CDD9E5 !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    padding: 12px 16px !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+    background-color: rgba(255,255,255,0.03) !important;
+}
+
+/* ── Dataframe ────────────────────────────────────────────── */
+.stDataFrame {
+    border: 1px solid #30363D !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.stDataFrame [data-testid="stDataFrameGlideDataEditor"] {
+    background-color: #161B22 !important;
+}
+
+/* ── Info / Warning / Error boxes ────────────────────────── */
+[data-testid="stAlert"] {
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+}
+
+[data-testid="stInfo"] {
+    background-color: rgba(47, 129, 247, 0.08) !important;
+    border-left: 3px solid #2F81F7 !important;
+    color: #CDD9E5 !important;
+}
+
+[data-testid="stWarning"] {
+    background-color: rgba(210, 153, 34, 0.08) !important;
+    border-left: 3px solid #D29922 !important;
+}
+
+[data-testid="stError"] {
+    background-color: rgba(248, 81, 73, 0.08) !important;
+    border-left: 3px solid #F85149 !important;
+}
+
+[data-testid="stSuccess"] {
+    background-color: rgba(63, 185, 80, 0.08) !important;
+    border-left: 3px solid #3FB950 !important;
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+hr {
+    border: none !important;
+    border-top: 1px solid #21262D !important;
+    margin: 1rem 0 !important;
+}
+
+/* ── Images ───────────────────────────────────────────────── */
+[data-testid="stImage"] img {
+    border-radius: 8px !important;
+    border: 1px solid #30363D !important;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #30363D; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7D8590; }
+
+/* ── Hide Streamlit Chrome ────────────────────────────────── */
+#MainMenu { visibility: hidden; }
+footer    { visibility: hidden; }
+[data-testid="stToolbar"] { visibility: hidden; }
+
+/* ── Spinner ──────────────────────────────────────────────── */
+[data-testid="stSpinner"] {
+    color: #7D8590 !important;
+    font-size: 0.82rem !important;
+}
+
+/* ================================================================
+   Custom Component Classes
+   ================================================================ */
+
+/* ── Sidebar brand header ─────────────────────────────────── */
+.rmx-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0 14px;
+    border-bottom: 1px solid #21262D;
+    margin-bottom: 16px;
+}
+
+.rmx-brand-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(47, 129, 247, 0.10);
+    border: 1px solid rgba(47, 129, 247, 0.25);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.rmx-brand-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #E6EDF3;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+
+.rmx-brand-tagline {
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: #7D8590;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* ── Section label ────────────────────────────────────────── */
+.rmx-section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #7D8590;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+/* ── Health score card ────────────────────────────────────── */
+.rmx-health-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.rmx-health-score {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.rmx-health-bar-bg {
+    height: 4px;
+    background: #21262D;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.rmx-health-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* ── Alert badge ──────────────────────────────────────────── */
+.rmx-alert-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(248, 81, 73, 0.10);
+    border: 1px solid rgba(248, 81, 73, 0.30);
+    color: #F85149;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+}
+
+/* ── Hotspot card ─────────────────────────────────────────── */
+.rmx-hotspot-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    transition: border-color 0.15s ease;
+}
+
+.rmx-hotspot-card:hover {
+    border-color: #2F81F7;
+}
+
+.rmx-hotspot-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.rmx-hotspot-location {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #E6EDF3;
+}
+
+.rmx-severity-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.rmx-severity-critical {
+    color: #F85149;
+    background: rgba(248, 81, 73, 0.10);
+    border: 1px solid rgba(248, 81, 73, 0.25);
+}
+
+.rmx-severity-high {
+    color: #D29922;
+    background: rgba(210, 153, 34, 0.10);
+    border: 1px solid rgba(210, 153, 34, 0.25);
+}
+
+.rmx-severity-medium {
+    color: #E3B341;
+    background: rgba(227, 179, 65, 0.10);
+    border: 1px solid rgba(227, 179, 65, 0.25);
+}
+
+.rmx-severity-low {
+    color: #3FB950;
+    background: rgba(63, 185, 80, 0.10);
+    border: 1px solid rgba(63, 185, 80, 0.25);
+}
+
+.rmx-hotspot-issue {
+    font-size: 0.76rem;
+    color: #7D8590;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.rmx-hotspot-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rmx-violation-increase {
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.rmx-confidence {
+    font-size: 0.67rem;
+    color: #7D8590;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Page header ──────────────────────────────────────────── */
+.rmx-page-header {
+    margin-bottom: 4px;
+}
+
+.rmx-page-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #E6EDF3;
+    margin: 0;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.rmx-page-subtitle {
+    font-size: 0.82rem;
+    color: #7D8590;
+    margin: 4px 0 12px;
+    line-height: 1.5;
+}
+
+/* ── TSA badge ────────────────────────────────────────────── */
+.rmx-tsa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(47, 129, 247, 0.10);
+    border: 1px solid rgba(47, 129, 247, 0.30);
+    color: #2F81F7;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    letter-spacing: 0.4px;
+}
+
+/* ── Output node chip ─────────────────────────────────────── */
+.rmx-output-chip {
+    display: inline-block;
+    background: #21262D;
+    border: 1px solid #30363D;
+    border-radius: 4px;
+    color: #7D8590;
+    font-size: 0.67rem;
+    font-weight: 500;
+    padding: 2px 9px;
+    margin: 2px 2px 2px 0;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.2px;
+}
+
+/* ── Status dot ───────────────────────────────────────────── */
+.rmx-status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.rmx-status-dot.online {
+    background: #3FB950;
+    box-shadow: 0 0 6px rgba(63, 185, 80, 0.5);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(63,185,80,0.5); }
+    50%       { opacity: 0.7; box-shadow: 0 0 12px rgba(63,185,80,0.8); }
+}
+
+/* ── Welcome panel ────────────────────────────────────────── */
+.rmx-welcome-panel {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+}
+
+.rmx-welcome-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #E6EDF3;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rmx-welcome-body {
+    font-size: 0.82rem;
+    color: #7D8590;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Quick action button override ────────────────────────── */
+.rmx-quick-action .stButton > button {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    padding: 9px 14px !important;
+    font-size: 0.79rem !important;
+}
+
+/* ── Report panel ─────────────────────────────────────────── */
+.rmx-report-section {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+}
+
+.rmx-report-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #2F81F7;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #21262D;
+}
+
+/* ── Stat row for graph tab ───────────────────────────────── */
+.rmx-stat-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.rmx-stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #E6EDF3;
+    font-variant-numeric: tabular-nums;
+}
+
+.rmx-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #7D8590;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-top: 2px;
+}
+
+/* ── Divider with label ───────────────────────────────────── */
+.rmx-divider {
+    border: none;
+    border-top: 1px solid #21262D;
+    margin: 12px 0;
+}
