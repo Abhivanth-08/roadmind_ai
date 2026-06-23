@@ -1,0 +1,82 @@
+{
+  "city": "Coimbatore",
+  "road": "5th Avenue",
+  "current_violations": 120,
+  "spread_risk": {
+    "level": "HIGH",
+    "affected_roads": [
+      "Main Street",
+      "School Road",
+      "Hospital Lane"
+    ],
+    "count": 3
+  },
+  "forecast": [
+    {
+      "hour": 0,
+      "violations": 120
+    },
+    {
+      "hour": 12,
+      "violations": 135
+    },
+    {
+      "hour": 24,
+      "violations": 148
+    },
+    {
+      "hour": 36,
+      "violations": 160
+    },
+    {
+      "hour": 48,
+      "violations": 172
+    },
+    {
+      "hour": 60,
+      "violations": 185
+    },
+    {
+      "hour": 72,
+      "violations": 195
+    }
+  ],
+  "hotspots": [
+    {
+      "name": "Market Junction",
+      "top": "25%",
+      "left": "40%",
+      "severity": "HIGH"
+    },
+    {
+      "name": "School Zone",
+      "top": "55%",
+      "left": "65%",
+      "severity": "MEDIUM"
+    },
+    {
+      "name": "Hospital Road",
+      "top": "75%",
+      "left": "30%",
+      "severity": "LOW"
+    }
+  ],
+  "interventions": [
+    {
+      "name": "Add 20 Parking Spaces",
+      "reduction_factor": 0.58
+    },
+    {
+      "name": "Deploy Traffic Police",
+      "reduction_factor": 0.42
+    },
+    {
+      "name": "Signal Retiming",
+      "reduction_factor": 0.35
+    },
+    {
+      "name": "Dynamic Signboards",
+      "reduction_factor": 0.25
+    }
+  ]
+}
